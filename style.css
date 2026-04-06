@@ -408,6 +408,62 @@ nav ul a:hover, nav ul a.active {
 }
 .pub-link:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
 
+.pub-badge {
+  font-size: 0.72rem;
+  background: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffe69c;
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+}
+
+.highlight-pub {
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+}
+
+.pub-highlight {
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+  margin-top: 0.4rem;
+  font-style: italic;
+}
+
+.pub-filter-bar {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 1.25rem 2rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--border);
+}
+
+.filter-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-faint);
+  margin-right: 0.5rem;
+}
+
+.pub-filter-bar a {
+  font-size: 0.8rem;
+  color: var(--ink-light);
+  border: 1px solid var(--border);
+  padding: 0.2rem 0.65rem;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.pub-filter-bar a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  text-decoration: none;
+}
+
 /* ── RESEARCH PAGE ── */
 .research-overview {
   max-width: 680px;
