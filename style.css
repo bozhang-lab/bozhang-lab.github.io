@@ -203,8 +203,7 @@ nav ul a:hover, nav ul a.active {
 }
 
 .research-figure img {
-  width: 70%;
-  max-width: 600px;
+  width: 100%;
   display: block;
   margin: 0 auto;
   border-radius: 6px;
