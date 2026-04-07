@@ -175,13 +175,15 @@ nav ul a:hover, nav ul a.active {
   background: var(--bg-off);
   border-bottom: 1px solid var(--border);
   padding: 4rem 2rem 3rem;
-  max-width: 100%;
 }
 
-.page-header > * {
+.page-header h1,
+.page-header p,
+.page-header .hero-label {
   max-width: var(--max-w);
   margin-left: auto;
   margin-right: auto;
+  display: block;
 }
 
 .page-header h1 {
