@@ -767,6 +767,18 @@ nav ul a:hover, nav ul a.active {
   color: var(--accent);
 }
 
+.news-photo {
+  margin: 0.75rem 0 0;
+}
+
+.news-photo img {
+  width: 100%;
+  max-width: 560px;
+  display: block;
+  border: none;
+  border-radius: 0;
+}
+
 /* ── FOOTER ── */
 footer {
   background: var(--bg-off);
