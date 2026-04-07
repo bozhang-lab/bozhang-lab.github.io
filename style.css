@@ -602,6 +602,59 @@ nav ul a:hover, nav ul a.active {
 }
 .contact-item span:last-child { color: var(--ink-light); line-height: 1.75; }
 
+.funding-group { margin-bottom: 3rem; }
+
+.funding-group-title {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+
+.funding-group-note {
+  font-size: 0.83rem;
+  color: var(--ink-faint);
+  margin-bottom: 1.25rem;
+  font-style: italic;
+}
+
+.funding-table { display: flex; flex-direction: column; }
+
+.funding-row {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+  align-items: baseline;
+}
+.funding-row:last-child { border-bottom: none; }
+
+.funding-year {
+  min-width: 44px;
+  font-size: 0.82rem;
+  color: var(--ink-faint);
+  font-variant-numeric: tabular-nums;
+  padding-top: 0.1rem;
+}
+
+.funding-body { flex: 1; }
+
+.funding-title {
+  font-size: 0.93rem;
+  color: var(--ink);
+  margin-bottom: 0.25rem;
+  line-height: 1.55;
+}
+
+.funding-source {
+  font-size: 0.8rem;
+  color: var(--ink-faint);
+}
+
+.funding-role {
+  color: var(--accent);
+}
+
 /* ── FOOTER ── */
 footer {
   background: var(--bg-off);
