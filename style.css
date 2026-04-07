@@ -350,6 +350,24 @@ nav ul a:hover, nav ul a.active {
 .pi-full-text em { font-family: var(--serif); font-style: italic; }
 .pi-contact { font-size: 0.88rem; color: var(--ink-faint); }
 
+.pi-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+}
+
+.people-photo {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+}
+
 /* ── PEOPLE LIST (with bio) ── */
 .people-list { display: flex; flex-direction: column; gap: 0; }
 
