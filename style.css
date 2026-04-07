@@ -282,11 +282,29 @@ nav ul a:hover, nav ul a.active {
 .pi-text p { font-size: 0.92rem; color: var(--ink-light); margin-bottom: 0.5rem; }
 .pi-text em { font-family: var(--serif); font-style: italic; }
 
+.pi-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  min-width: 180px;
+}
+
+.pi-photo-home {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 1px solid var(--border);
+  display: block;
+}
+
 .pi-stats {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  min-width: 180px;
+  gap: 1.25rem;
+  width: 100%;
 }
 
 .stat-item { text-align: center; }
@@ -305,6 +323,11 @@ nav ul a:hover, nav ul a.active {
   letter-spacing: 0.08em;
   color: var(--ink-faint);
   margin-top: 0.3rem;
+}
+
+@media (max-width: 640px) {
+  .pi-right { width: 100%; }
+  .pi-photo-home { width: 120px; height: 120px; }
 }
 
 /* ── NEWS SNAP ── */
