@@ -197,6 +197,28 @@ nav ul a:hover, nav ul a.active {
   display: block;
 }
 
+/* ── RESEARCH FIGURES ── */
+.research-figure {
+  margin: 2rem 0;
+}
+
+.research-figure img {
+  width: 100%;
+  max-width: 800px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+
+.research-figure figcaption {
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--ink-faint);
+  margin-top: 0.6rem;
+  font-style: italic;
+}
+
 /* ── RESEARCH DIRECTIONS GRID ── */
 .directions-grid {
   display: grid;
