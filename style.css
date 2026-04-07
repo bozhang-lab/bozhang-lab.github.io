@@ -362,6 +362,7 @@ nav ul a:hover, nav ul a.active {
 .people-photo {
   width: 72px;
   height: 72px;
+  min-width: 72px;
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
