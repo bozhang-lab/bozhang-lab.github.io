@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recognition | Bo Zhang Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231d4e89'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' fill='white' font-family='Georgia,serif' font-size='20' font-weight='bold'>B</text></svg>">
+  <style>
+    .rec-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      margin-top: 1.5rem;
+    }
+    .rec-table th {
+      background: #1d4e89;
+      color: #fff;
+      font-weight: 500;
+      padding: 0.7rem 1.1rem;
+      text-align: left;
+    }
+    .rec-table td {
+      padding: 0.65rem 1.1rem;
+      border-bottom: 1px solid #e8e4dc;
+      vertical-align: top;
+      line-height: 1.55;
+    }
+    .rec-table tr:nth-child(even) td { background: #f7f5f1; }
+    .rec-table td:first-child {
+      white-space: nowrap;
+      color: #666;
+      width: 6rem;
+    }
+    td.badge { width: 9rem; white-space: nowrap; }
+    .badge-tag {
+      display: inline-block;
+      font-size: 0.77rem;
+      padding: 0.15rem 0.55rem;
+      border-radius: 2px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+    .badge-invited { background: #e8f0fb; color: #1d4e89; }
+    .badge-keynote { background: #1d4e89; color: #fff; }
+    .badge-oral    { background: #f0f0f0; color: #444; }
+    .badge-chair   { background: #fef3e2; color: #9a5a00; }
+
+    @media (max-width: 640px) {
+      .rec-table td:first-child,
+      .rec-table th:first-child,
+      td.badge, th.badge-h { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Bo Zhang Lab</a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="people.html">People</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="recognition.html" class="active">Recognition</a></li>
+      <li><a href="joinus.html">Join Us</a></li>
+    </ul>
+    <button class="nav-toggle" onclick="toggleMenu()">☰</button>
+  </nav>
+
+  <div class="page-header"><div class="page-header-inner">
+    <p class="hero-label">Honors · Presentations · Service</p>
+    <h1>Recognition</h1>
+    <p class="page-header-sub">Awards received, invited talks delivered, and academic community service.</p>
+  </div></div>
+
+  <!-- HONORS -->
+  <section class="section" id="honors">
+    <div class="section-label">Honors &amp; Awards</div>
+    <table class="rec-table">
+      <thead><tr><th>Year</th><th>Honor / Award</th></tr></thead>
+      <tbody>
+        <tr><td>2024</td><td>SUSTech Outstanding Teaching Award (2 recipients university-wide)</td></tr>
+        <tr><td>2024</td><td>Most Popular Instructor among Undergraduate Students, SUSTech</td></tr>
+        <tr><td>2024</td><td>Academic Supervisor of the Year for SUSTech "Top 10 Undergraduate Graduates"</td></tr>
+        <tr><td>2023</td><td>SUSTech Young Faculty Teaching Competition — Second Prize</td></tr>
+        <tr><td>2023</td><td>Outstanding Supervisor Award, 18th "Challenge Cup" National Undergraduate Extracurricular Academic Science and Technology Competition</td></tr>
+        <tr><td>2021</td><td>First-Class Award for Outstanding Recruitment Team, SUSTech Chongqing Admissions Office</td></tr>
+        <tr><td>2019</td><td>Nanshan District "Leading Talent" Program, Category B, Shenzhen</td></tr>
+        <tr><td>2018</td><td>Shenzhen Overseas High-Caliber Personnel, Category B</td></tr>
+        <tr><td>2017</td><td>Forbes China 30 Under 30</td></tr>
+        <tr><td>2015</td><td>Chinese Government Award for Outstanding Self-Financed Students Abroad (Ministry of Education)</td></tr>
+        <tr><td>2014</td><td>Materials Research Society Graduate Student Silver Award</td></tr>
+        <tr><td>2013</td><td>Mona M. Burgess Fellow, Stanford University</td></tr>
+        <tr><td>2010</td><td>William S. Johnson Fellow, Stanford University</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- PRESENTATIONS -->
+  <section class="section" id="presentations">
+    <div class="section-label">Conference Presentations</div>
+    <table class="rec-table">
+      <thead><tr><th>Date</th><th>Conference</th><th class="badge-h">Role</th></tr></thead>
+      <tbody>
+        <tr><td>2025.12</td><td>Greater Bay Area Medical Artificial Intelligence Conference</td><td class="badge"><span class="badge-tag badge-invited">Invited Talk</span></td></tr>
+        <tr><td>2025.12</td><td>CCF Programmer Conference</td><td class="badge"><span class="badge-tag badge-invited">Invited Talk</span></td></tr>
+        <tr><td>2025.10</td><td>Chinese Society for Biomaterials Annual Congress</td><td class="badge"><span class="badge-tag badge-keynote">Keynote</span></td></tr>
+        <tr><td>2025.10</td><td>Beijing Graphene Forum</td><td class="badge"><span class="badge-tag badge-invited">Invited Talk</span></td></tr>
+        <tr><td>2025.07</td><td>Chinese Materials Congress 2025</td><td class="badge"><span class="badge-tag badge-invited">Invited Talk</span></td></tr>
+        <tr><td>2025.05</td><td>1st National Conference on Interface Chemistry, Chinese Chemical Society</td><td class="badge"><span class="badge-tag badge-invited">Invited Talk</span></td></tr>
+        <tr><td>2025.04</td><td>Biophysical Society of China — Nanomedicine Branch Annual Meeting &amp; 4th China Nanomedicine Congress · North Asia Medical Forum</td><td class="badge"><span class="badge-tag badge-invited">Invited Talk</span></td></tr>
+        <tr><td>2025.04</td><td>13th National Conference on Chemical Biology, Chinese Chemical Society</td><td class="badge"><span class="badge-tag badge-oral">Oral</span></td></tr>
+        <tr><td>2024.12</td><td>2024 International Symposium on Nanoscience</td><td class="badge"><span class="badge-tag badge-invited">Invited Talk</span></td></tr>
+        <tr><td>2024.11</td><td>Nano-Biology and Nano-Biomaterials 2024 崖州 Summit</td><td class="badge"><span class="badge-tag badge-invited">Invited Talk</span></td></tr>
+        <tr><td>2024.10</td><td>Symposium on Biomaterials and Intelligent Medical Diagnostics</td><td class="badge"><span class="badge-tag badge-invited">Invited Talk</span></td></tr>
+        <tr><td>2024.10</td><td>Inaugural Meeting of the Shenzhen Immunology Society — Clinical Laboratory Medicine Committee &amp; Immunoassay Clinical Research Forum</td><td class="badge"><span class="badge-tag badge-invited">Invited Talk</span></td></tr>
+        <tr><td>2024.08</td><td>5th China High-end Forum on Biosensing, Biochips &amp; Nanobiotechnology</td><td class="badge"><span class="badge-tag badge-keynote">Keynote</span></td></tr>
+        <tr><td>2024.08</td><td>"Innovative Biomaterials · Smart Green Future" 2024 Greater Bay Area Innovation Congress</td><td class="badge"><span class="badge-tag badge-invited">Invited Talk</span></td></tr>
+        <tr><td>2024.07</td><td>2024 International Congress on Separation and Purification Technology</td><td class="badge"><span class="badge-tag badge-oral">Oral</span></td></tr>
+        <tr><td>2024.06</td><td>34th Annual Meeting of the Chinese Chemical Society</td><td class="badge"><span class="badge-tag badge-oral">Oral</span></td></tr>
+        <tr><td>2023.11</td><td>Annual Meeting of the Clinical Laboratory Science and Technology Translation Committee</td><td class="badge"><span class="badge-tag badge-invited">Invited Talk</span></td></tr>
+        <tr><td>2023.11</td><td>2023 High-End Forum on Nano Frontiers and Applications</td><td class="badge"><span class="badge-tag badge-oral">Oral</span></td></tr>
+        <tr><td>2023.11</td><td>14th National Conference on Analytical Chemistry, Chinese Chemical Society</td><td class="badge"><span class="badge-tag badge-oral">Oral</span></td></tr>
+        <tr><td>2023.10</td><td>iMed Young Scholar Forum</td><td class="badge"><span class="badge-tag badge-invited">Invited Talk</span></td></tr>
+        <tr><td>2023.10</td><td>2023 Chinese Society for Biomaterials Annual Congress</td><td class="badge"><span class="badge-tag badge-chair">Session Chair</span></td></tr>
+        <tr><td>2023.09</td><td>16th National Conference on Chemical Sensors</td><td class="badge"><span class="badge-tag badge-invited">Invited Talk</span></td></tr>
+        <tr><td>2023.06</td><td>33rd Annual Meeting of the Chinese Chemical Society</td><td class="badge"><span class="badge-tag badge-oral">Oral</span></td></tr>
+        <tr><td>2023.03</td><td>Inaugural Meeting &amp; 1st Academic Conference, In Vitro Diagnostics Biomaterials Branch, Chinese Society for Biomaterials</td><td class="badge"><span class="badge-tag badge-chair">Session Chair</span></td></tr>
+        <tr><td>2022.08</td><td>7th CIFTIS Bioindustry Conference</td><td class="badge"><span class="badge-tag badge-invited">Invited Talk</span></td></tr>
+        <tr><td>2022.04</td><td>2021–2022 China Biomedical Engineering Congress &amp; Innovation in Healthcare Summit</td><td class="badge"><span class="badge-tag badge-invited">Invited Talk</span></td></tr>
+        <tr><td>2021.10</td><td>23rd National Conference on Chromatography</td><td class="badge"><span class="badge-tag badge-invited">Invited Talk</span></td></tr>
+        <tr><td>2021.04</td><td>13th National Conference on Microanalytical Systems, Chinese Chemical Society</td><td class="badge"><span class="badge-tag badge-chair">Session Chair</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- SERVICE -->
+  <section class="section" id="service">
+    <div class="section-label">Academic &amp; Professional Service</div>
+    <table class="rec-table">
+      <thead><tr><th colspan="2">Organization / Role</th></tr></thead>
+      <tbody>
+        <tr><td colspan="2"><strong>Secretary-General</strong>, In Vitro Diagnostics Biomaterials Branch, Chinese Society for Biomaterials</td></tr>
+        <tr><td colspan="2"><strong>Council Member</strong>, Shenzhen Society for Biological and Medical Engineering</td></tr>
+        <tr><td colspan="2"><strong>Member</strong>, Greater Bay Area Young Scholars Collaboration Network</td></tr>
+        <tr><td colspan="2"><strong>Expert Reviewer</strong>, Shenzhen Science and Technology Innovation Commission</td></tr>
+        <tr><td colspan="2"><strong>Peer Reviewer</strong> — <em>Science Advances, Advanced Science, Nano Letters, Chemical Communications, Lab on a Chip, Nanoscale, Transactions on Biomedical Engineering, Analytica Chimica Acta, Analyst, Analytical Methods, Antibody Technology Journal, Open Access Bioinformatics, International Journal of Nanomedicine</em></td></tr>
+        <tr><td colspan="2"><strong>Member</strong>, Chinese Chemical Society</td></tr>
+        <tr><td colspan="2"><strong>Member</strong>, Materials Research Society</td></tr>
+        <tr><td colspan="2"><strong>Member</strong>, American Chemical Society</td></tr>
+        <tr><td colspan="2"><strong>Member</strong>, American Diabetes Association</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <strong>Bo Zhang Lab</strong><br>
+        Department of Biomedical Engineering<br>
+        Southern University of Science and Technology<br>
+        Shenzhen, China
+      </div>
+      <div>
+        <strong>Contact</strong><br>
+        zhangb3 [at] sustech.edu.cn
+      </div>
+    </div>
+    <div class="footer-copy">© 2026 Bo Zhang Lab · bozhang-lab.github.io</div>
+  </footer>
+
+  <script src="nav.js"></script>
+</body>
+</html>
