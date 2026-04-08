@@ -376,8 +376,8 @@ nav ul a:hover, nav ul a.active {
 .pi-contact { font-size: 0.88rem; color: var(--ink-faint); }
 
 .pi-photo {
-  width: 180px;
-  height: 180px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
@@ -385,9 +385,9 @@ nav ul a:hover, nav ul a.active {
 }
 
 .people-photo {
-  width: 144px;
-  height: 144px;
-  min-width: 144px;
+  width: 72px;
+  height: 72px;
+  min-width: 72px;
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
@@ -407,8 +407,8 @@ nav ul a:hover, nav ul a.active {
 .people-item:last-child { border-bottom: none; }
 
 .people-photo-placeholder {
-  width: 144px;
-  height: 144px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   background: var(--accent-lt);
   display: flex;
@@ -457,7 +457,7 @@ nav ul a:hover, nav ul a.active {
 }
 
 .member-photo-placeholder {
-  width: 144px; height: 144px;
+  width: 72px; height: 72px;
   border-radius: 50%;
   background: var(--bg-off);
   display: flex; align-items: center; justify-content: center;
@@ -765,6 +765,18 @@ nav ul a:hover, nav ul a.active {
 
 .funding-role {
   color: var(--accent);
+}
+
+.news-photo {
+  margin: 0.75rem 0 0;
+}
+
+.news-photo img {
+  width: 100%;
+  max-width: 560px;
+  display: block;
+  border: none;
+  border-radius: 0;
 }
 
 /* ── FOOTER ── */
