@@ -85,6 +85,19 @@ nav ul a:hover, nav ul a.active {
   color: var(--ink); margin-left: auto;
 }
 
+.nav-lang {
+  font-size: 0.78rem;
+  color: var(--ink-light);
+  text-decoration: none;
+  border: 1px solid var(--border);
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  margin-left: auto;
+  transition: color 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+.nav-lang:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+
 /* ── HERO ── */
 .hero {
   padding: 6rem 2rem 4rem;
@@ -811,6 +824,7 @@ footer {
   nav ul { display: none; flex-direction: column; position: absolute; top: var(--nav-h); left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--border); padding: 1rem 2rem; }
   nav ul.open { display: flex; }
   .nav-toggle { display: block; }
+  .nav-lang { display: none; }
   .pi-snap { flex-direction: column; gap: 2rem; }
   .pi-stats { grid-template-columns: repeat(4, 1fr); }
   .research-block { flex-direction: column; gap: 0.5rem; }
