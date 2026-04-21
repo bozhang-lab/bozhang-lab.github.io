@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>记忆 | 张博</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Noto+Serif+SC:wght@300;400;500&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #1a1a1a;
+      --ink-light: #555;
+      --ink-faint: #999;
+      --bg: #faf9f7;
+      --bg-card: #fff;
+      --gold: #c9a84c;
+      --navy: #1d4e89;
+      --border: #e8e4dc;
+      --serif: 'EB Garamond', 'Noto Serif SC', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    .site-header {
+      padding: 4rem 2rem 2rem;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.82rem;
+      color: var(--ink-faint);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+      margin-bottom: 3rem;
+    }
+    .back-link:hover { color: var(--navy); }
+    .back-link::before { content: "←"; font-size: 1rem; }
+
+    .header-label {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .header-title {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 5vw, 3rem);
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+
+    .header-sub {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--ink-faint);
+      max-width: 480px;
+      line-height: 1.7;
+    }
+
+    .header-rule {
+      width: 40px;
+      height: 2px;
+      background: var(--gold);
+      margin: 2rem 0 0;
+      border: none;
+    }
+
+    /* ── TIMELINE ── */
+    .timeline {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 3rem 2rem 6rem;
+      position: relative;
+    }
+
+    /* vertical line */
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 2rem;
+      top: 3rem;
+      bottom: 6rem;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      opacity: 0.3;
+    }
+
+    @media (min-width: 600px) {
+      .timeline::before { left: 3rem; }
+    }
+
+    /* ── ENTRY ── */
+    .entry {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 5rem;
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .entry.visible { opacity: 1; transform: translateY(0); }
+
+    /* dot on timeline */
+    .entry-dot {
+      flex-shrink: 0;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--gold);
+      margin-top: 0.6rem;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 0 0 4px var(--bg);
+    }
+
+    .entry-body { flex: 1; min-width: 0; }
+
+    .entry-date {
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    /* photo */
+    .entry-photo {
+      width: 100%;
+      border-radius: 4px;
+      display: block;
+      margin-bottom: 1.25rem;
+      cursor: zoom-in;
+      transition: opacity 0.2s;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      background: var(--border);
+    }
+    .entry-photo:hover { opacity: 0.9; }
+
+    /* placeholder photo */
+    .entry-photo-placeholder {
+      width: 100%;
+      aspect-ratio: 4/3;
+      border-radius: 4px;
+      background: var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      color: var(--ink-faint);
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+    }
+
+    .entry-story {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--ink-light);
+    }
+
+    .entry-story-placeholder {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--ink-faint);
+      font-style: italic;
+    }
+
+    /* ── LIGHTBOX ── */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      cursor: zoom-out;
+    }
+    .lightbox.open { display: flex; }
+
+    .lightbox img {
+      max-width: 92vw;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 2px;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      color: rgba(255,255,255,0.6);
+      font-size: 1.5rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      line-height: 1;
+      transition: color 0.2s;
+    }
+    .lightbox-close:hover { color: #fff; }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.78rem;
+      color: var(--ink-faint);
+      letter-spacing: 0.06em;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+
+<div class="site-header">
+  <a class="back-link" href="people.html">返回团队页面</a>
+  <div class="header-label">私人影像</div>
+  <h1 class="header-title">记忆</h1>
+  <p class="header-sub">一些地方，一些时刻，一些值得留下来的东西。</p>
+  <hr class="header-rule" />
+</div>
+
+<div class="timeline">
+
+  <div class="entry">
+    <div class="entry-dot"></div>
+    <div class="entry-body">
+      <div class="entry-date">2024年10月</div>
+      <div class="entry-photo-placeholder">memory_2024_10_description.jpg</div>
+      <p class="entry-story-placeholder">在这里写下这张照片背后的故事……</p>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-dot"></div>
+    <div class="entry-body">
+      <div class="entry-date">2024年07月</div>
+      <div class="entry-photo-placeholder">memory_2024_07_description.jpg</div>
+      <p class="entry-story-placeholder">在这里写下这张照片背后的故事……</p>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-dot"></div>
+    <div class="entry-body">
+      <div class="entry-date">2024年03月</div>
+      <div class="entry-photo-placeholder">memory_2024_03_description.jpg</div>
+      <p class="entry-story-placeholder">在这里写下这张照片背后的故事……</p>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-dot"></div>
+    <div class="entry-body">
+      <div class="entry-date">2023年11月</div>
+      <div class="entry-photo-placeholder">memory_2023_11_description.jpg</div>
+      <p class="entry-story-placeholder">在这里写下这张照片背后的故事……</p>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-dot"></div>
+    <div class="entry-body">
+      <div class="entry-date">2023年07月</div>
+      <div class="entry-photo-placeholder">memory_2023_07_description.jpg</div>
+      <p class="entry-story-placeholder">在这里写下这张照片背后的故事……</p>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-dot"></div>
+    <div class="entry-body">
+      <div class="entry-date">2023年02月</div>
+      <div class="entry-photo-placeholder">memory_2023_02_description.jpg</div>
+      <p class="entry-story-placeholder">在这里写下这张照片背后的故事……</p>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-dot"></div>
+    <div class="entry-body">
+      <div class="entry-date">2022年09月</div>
+      <div class="entry-photo-placeholder">memory_2022_09_description.jpg</div>
+      <p class="entry-story-placeholder">在这里写下这张照片背后的故事……</p>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-dot"></div>
+    <div class="entry-body">
+      <div class="entry-date">2022年04月</div>
+      <div class="entry-photo-placeholder">memory_2022_04_description.jpg</div>
+      <p class="entry-story-placeholder">在这里写下这张照片背后的故事……</p>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-dot"></div>
+    <div class="entry-body">
+      <div class="entry-date">2021年12月</div>
+      <div class="entry-photo-placeholder">memory_2021_12_description.jpg</div>
+      <p class="entry-story-placeholder">在这里写下这张照片背后的故事……</p>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-dot"></div>
+    <div class="entry-body">
+      <div class="entry-date">2021年06月</div>
+      <div class="entry-photo-placeholder">memory_2021_06_description.jpg</div>
+      <p class="entry-story-placeholder">在这里写下这张照片背后的故事……</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightbox-img" src="" alt="" />
+</div>
+
+<footer class="site-footer">
+  © 2026 Bo Zhang
+</footer>
+
+<script>
+  // Scroll reveal
+  const entries = document.querySelectorAll('.entry');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  entries.forEach(e => observer.observe(e));
+
+  // Lightbox
+  document.querySelectorAll('.entry-photo').forEach(img => {
+    img.addEventListener('click', () => {
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox').classList.add('open');
+    });
+  });
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+  }
+
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this) closeLightbox();
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
+
+</body>
+</html>
